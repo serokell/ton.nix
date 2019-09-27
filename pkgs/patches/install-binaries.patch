@@ -1,0 +1,47 @@
+diff --git a/crypto/CMakeLists.txt b/crypto/CMakeLists.txt
+index c76de70..382303d 100644
+--- a/crypto/CMakeLists.txt
++++ b/crypto/CMakeLists.txt
+@@ -333,3 +333,11 @@ target_link_libraries(dump-block PUBLIC ton_crypto fift-lib ton_block)
+ if (WINGETOPT_FOUND)
+   target_link_libraries_system(dump-block wingetopt)
+ endif()
++
++
++install(TARGETS fift func tlbc create-state dump-block
++  LIBRARY DESTINATION lib
++  ARCHIVE DESTINATION lib
++  RUNTIME DESTINATION bin
++  INCLUDES DESTINATION include
++)
+diff --git a/lite-client/CMakeLists.txt b/lite-client/CMakeLists.txt
+index a1afd52..f45dac2 100644
+--- a/lite-client/CMakeLists.txt
++++ b/lite-client/CMakeLists.txt
+@@ -6,3 +6,10 @@ target_link_libraries(lite-client-common PUBLIC tdutils tdactor adnllite tl_api
+ add_executable(lite-client lite-client.cpp lite-client.h)
+ target_link_libraries(lite-client tdutils tdactor adnllite tl_api tl_lite_api tl-lite-utils ton_crypto ton_block
+   terminal lite-client-common)
++
++install(TARGETS lite-client
++  LIBRARY DESTINATION lib
++  ARCHIVE DESTINATION lib
++  RUNTIME DESTINATION bin
++  INCLUDES DESTINATION include
++)
+diff --git a/utils/CMakeLists.txt b/utils/CMakeLists.txt
+index c4207bb..36caf8f 100644
+--- a/utils/CMakeLists.txt
++++ b/utils/CMakeLists.txt
+@@ -14,3 +14,11 @@ add_executable(json2tlo json2tlo.cpp )
+ target_link_libraries(json2tlo tl_api ton_crypto keys )
+ target_include_directories(json2tlo PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/..)
++
++
++install(TARGETS generate-random-id json2tlo
++  LIBRARY DESTINATION lib
++  ARCHIVE DESTINATION lib
++  RUNTIME DESTINATION bin
++  INCLUDES DESTINATION include
++)

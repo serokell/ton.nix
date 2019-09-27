@@ -16,7 +16,8 @@ stdenv.mkDerivation rec {
 
   inherit src;
 
-  patches = [ ./patches/tonlib-cmake-config.patch ];
+  patches =
+    [ ./patches/tonlib-cmake-config.patch ./patches/install-binaries.patch ];
 
   nativeBuildInputs = [ cmake pkgconfig ];
   buildInputs = [ openssl readline zlib ];
