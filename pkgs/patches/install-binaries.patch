@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Serokell <https://serokell.io>
+#
+# SPDX-License-Identifier: LGPL-2.0-or-later
+
 diff --git a/crypto/CMakeLists.txt b/crypto/CMakeLists.txt
 index c76de70..382303d 100644
 --- a/crypto/CMakeLists.txt
