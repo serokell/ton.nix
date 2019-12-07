@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Serokell <https://serokell.io>
+#
+# SPDX-License-Identifier: MPL-2.0
+
 {
   services.openssh.enable = true;
   # install the vm-ssh.key.pub for ssh access
