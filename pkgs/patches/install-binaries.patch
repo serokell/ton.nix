@@ -2,22 +2,6 @@
 #
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
-diff --git a/crypto/CMakeLists.txt b/crypto/CMakeLists.txt
-index c76de70..382303d 100644
---- a/crypto/CMakeLists.txt
-+++ b/crypto/CMakeLists.txt
-@@ -333,3 +333,11 @@ target_link_libraries(dump-block PUBLIC ton_crypto fift-lib ton_block)
- if (WINGETOPT_FOUND)
-   target_link_libraries_system(dump-block wingetopt)
- endif()
-+
-+
-+install(TARGETS fift func tlbc create-state dump-block
-+  LIBRARY DESTINATION lib
-+  ARCHIVE DESTINATION lib
-+  RUNTIME DESTINATION bin
-+  INCLUDES DESTINATION include
-+)
 diff --git a/lite-client/CMakeLists.txt b/lite-client/CMakeLists.txt
 index a1afd52..f45dac2 100644
 --- a/lite-client/CMakeLists.txt
