@@ -5,19 +5,16 @@
 self: super:
 
 let
-  src = super.fetchFromGitHub {
-    owner = "ton-blockchain";
-    repo = "ton";
-    rev = "ac3eb1a7b86b4a5351210c4e2670e470f721b7df";
-    sha256 = "1cbv14c60xmy4fanhmf9cdhj845kx6r54b8i0pljkhpv1sy74awd";
+  sources = import ./nix/sources.nix;
+  src = self.fetchFromGitHub {
+    inherit (sources.ton) owner repo rev;
+    # sadly, not the one niv comes up with
+    sha256 = "1znikk7l2pv5mdl9rh59dljdrqkbwnazlpdjr4yfc87bcynb1rbz";
     fetchSubmodules = true;
   };
-
-  version = "2019-09-25";
-
-  callPackage = super.newScope { inherit src version; };
+  version = builtins.substring 0 7 sources.ton.rev;
 in
 
 {
-  ton = callPackage ./pkgs/all.nix {};
+  ton = self.callPackage ./pkgs/all.nix { inherit src version; };
 }
