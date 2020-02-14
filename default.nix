@@ -20,4 +20,16 @@ in
 
 {
   ton = self.callPackage ./pkgs/all.nix { inherit src version; };
+  ton-vm = self.callPackage ./pkgs/vm.nix {
+    key = ./modules/vm/vm-ssh.key;
+    ports = [ 29108 29109 29110 ];
+    config.imports = [ ./modules/ton.nix ];
+    config.services.ton = {
+      enable = true;
+      ports.main = 29108;
+      ports.console = 29109;
+      ports.lite = 29110;
+      allowed_clients = { "jLl01+sOhXSANIe7kGtI/1mEYZTOf9YdzhzyDBnspVo=" = 15; };
+    };
+  };
 }
