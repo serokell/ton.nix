@@ -7,18 +7,16 @@
 , stdenv, lib
 , cmake, pkgconfig
 , openssl, readline, zlib
+, libmicrohttpd
 }:
 
 stdenv.mkDerivation rec {
   pname = "ton";
-  inherit version;
-  name = "${pname}-${version}";
-
-  inherit src;
+  inherit version src;
 
   patches =
     [ ./patches/tonlib-cmake-config.patch ./patches/install-binaries.patch ];
 
   nativeBuildInputs = [ cmake pkgconfig ];
-  buildInputs = [ openssl readline zlib ];
+  buildInputs = [ openssl readline zlib libmicrohttpd ];
 }

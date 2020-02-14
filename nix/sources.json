@@ -1,0 +1,38 @@
+{
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "444c1ad4896ace10b97ab5becede1ceeced0a90c",
+        "sha256": "199nhdwlnk4wn4kgqyjq9z5cwlajjq7j3i4f54ihc1l9b9rggfd8",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/444c1ad4896ace10b97ab5becede1ceeced0a90c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "nixos-19.03",
+        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
+        "homepage": "https://github.com/NixOS/nixpkgs",
+        "owner": "NixOS",
+        "repo": "nixpkgs-channels",
+        "rev": "5f7eae4bbb15ce7fa4da1984fd6ba5be7af50952",
+        "sha256": "00bzh394dqlwyh53lsd5vj8jdy9pr30rp52q8q5z6h5kw2lr1byf",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/5f7eae4bbb15ce7fa4da1984fd6ba5be7af50952.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "ton": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "ton-blockchain",
+        "repo": "ton",
+        "rev": "ceaed40ac4871ffaeb5b493586ab6f0899fd490d",
+        "sha256": "1p3kg2l7h6nfnjizf0xgs7090037v60zz8qmqamvf9y71ic9cr7f",
+        "type": "tarball",
+        "url": "https://github.com/ton-blockchain/ton/archive/ceaed40ac4871ffaeb5b493586ab6f0899fd490d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
