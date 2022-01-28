@@ -11,7 +11,7 @@ index 0000000..4d4080b
 +@PACKAGE_INIT@
 +include ("${CMAKE_CURRENT_LIST_DIR}/TonlibTargets.cmake")%
 diff --git a/tonlib/CMakeLists.txt b/tonlib/CMakeLists.txt
-index 9b9b81d..473bc48 100644
+index 5b6530a..d8102bc 100644
 --- a/tonlib/CMakeLists.txt
 +++ b/tonlib/CMakeLists.txt
 @@ -154,12 +154,19 @@ install(EXPORT Tonlib

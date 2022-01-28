@@ -3,14 +3,14 @@
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
 diff --git a/lite-client/CMakeLists.txt b/lite-client/CMakeLists.txt
-index a1afd52..f45dac2 100644
+index b844951..c71ec85 100644
 --- a/lite-client/CMakeLists.txt
 +++ b/lite-client/CMakeLists.txt
-@@ -6,3 +6,10 @@ target_link_libraries(lite-client-common PUBLIC tdutils tdactor adnllite tl_api
- add_executable(lite-client lite-client.cpp lite-client.h)
+@@ -7,4 +7,9 @@ add_executable(lite-client lite-client.cpp lite-client.h)
  target_link_libraries(lite-client tdutils tdactor adnllite tl_api tl_lite_api tl-lite-utils ton_crypto ton_block
-   terminal lite-client-common)
-+
+   terminal lite-client-common git)
+
+-install(TARGETS lite-client RUNTIME DESTINATION bin)
 +install(TARGETS lite-client
 +  LIBRARY DESTINATION lib
 +  ARCHIVE DESTINATION lib
@@ -18,14 +18,13 @@ index a1afd52..f45dac2 100644
 +  INCLUDES DESTINATION include
 +)
 diff --git a/utils/CMakeLists.txt b/utils/CMakeLists.txt
-index c4207bb..36caf8f 100644
+index 25df572..55b8a67 100644
 --- a/utils/CMakeLists.txt
 +++ b/utils/CMakeLists.txt
-@@ -14,3 +14,11 @@ add_executable(json2tlo json2tlo.cpp )
- target_link_libraries(json2tlo tl_api ton_crypto keys )
+@@ -15,9 +15,15 @@ target_link_libraries(json2tlo tl_api ton_crypto keys git)
  target_include_directories(json2tlo PUBLIC
    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/..)
-+
+
 +
 +install(TARGETS generate-random-id json2tlo
 +  LIBRARY DESTINATION lib
@@ -33,3 +32,10 @@ index c4207bb..36caf8f 100644
 +  RUNTIME DESTINATION bin
 +  INCLUDES DESTINATION include
 +)
++
+ add_executable(pack-viewer pack-viewer.cpp )
+ target_link_libraries(pack-viewer tl_api ton_crypto keys validator tddb)
+ target_include_directories(pack-viewer PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/..)
+-
+-install(TARGETS generate-random-id RUNTIME DESTINATION bin)

@@ -11,9 +11,9 @@ let
     inherit (sources.ton) owner repo rev;
     # sadly, not the one niv comes up with. add this check
     # to make sure people update the hash
-    sha256 = if version == "ceaed40" then
-      "1znikk7l2pv5mdl9rh59dljdrqkbwnazlpdjr4yfc87bcynb1rbz" else
-      "0000000000000000000000000000000000000000000000000000";
+    hash = if version == "ae5c072" then
+      "sha256-6sKA3CPcMkkzLpMJULqGWcLg/INLOK5pVaNbljSIwIs=" else
+      "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
     fetchSubmodules = true;
   };
 in
